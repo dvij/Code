@@ -2,13 +2,6 @@ from abc import ABC, abstractmethod
 import logging
 from typing import Any, List
 
-# TODO: Implement the following.
-# User cmd, database accessible, tool is calling external api
-# class param attack config list of tools, databases or users attackable.
-# one attack per tool, database or user
-# list of att comp, attacks, filters and success params are passed to attack gateway
-# register attacks
-
 
 class GeneralizedCertificate(ABC):
     def __init__(self, data_distribution: Any, ):
@@ -21,7 +14,7 @@ class GeneralizedCertificate(ABC):
         raise NotImplementedError
 
     @abstractmethod
-    def certificate(self) -> float:
+    def certificate(self, **kwargs) -> float:
         """Implement the mapping \sup_{\theta, z_adv} E_{\theta' ~ \epsilon\delta(F(\theta, z)) + F(\theta, \zadv)}[\lambda(\theta')] - \lambda(\theta) + l_adv(\theta)"""
         raise NotImplementedError
     
